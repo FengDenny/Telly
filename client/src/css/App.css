@@ -1,0 +1,180 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Oxygen&display=swap");
+
+:root {
+  --primary-font: "Comfortaa", cursive;
+  --secondary-font: "Oxygen", sans-serif;
+  --primary-color: #007ffc;
+  --primary-color-hover: #075eb6;
+  --secondary-color: #5d5d61;
+  --white-color: #fff;
+  --space: 1.5em 0;
+  --space: 2em 0;
+  --content-overlay: rgba(0, 0, 0, 0.5);
+  --border-radius: 5px;
+}
+
+/* CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Footer */
+/* put footer at the bottom */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.App-content {
+  flex: 1 0 auto;
+  padding: var(--space) var(--space) 0;
+  width: 100%;
+}
+
+/* Font Headings */
+.primary-heading {
+  font-family: var(--primary-font);
+}
+
+.secondary-heading {
+  font-family: var(--secondary-font);
+}
+
+/* Colors */
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.primary-bg {
+  background-color: var(--primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.secondary-bg {
+  background-color: var(--secondary-color);
+}
+.white-color {
+  color: var(--white-color);
+}
+
+/* Container */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Flex proprty */
+
+.display-flex {
+  display: flex;
+}
+
+.flex-align {
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 63vh;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-direction-column {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start !important;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Font */
+.font-sm {
+  font-size: 15px;
+}
+.font-md {
+  font-size: 18px;
+}
+.font-l {
+  font-size: 22px;
+}
+.font-logo {
+  font-size: 30px;
+}
+.font-xl {
+  font-size: 50px;
+}
+
+/* padding */
+
+.padding {
+  padding: 0 10px;
+}
+
+/* Margin */
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+/* Grid */
+
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 450px;
+  width: 100%;
+}
+
+/* Card  */
+.card {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  width: 400px;
+  height: auto;
+  position: relative;
+  box-shadow: 0 8px 16px 0 var(--content-overlay);
+}

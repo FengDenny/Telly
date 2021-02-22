@@ -1,0 +1,87 @@
+/* navbar */
+
+.navbar {
+  box-shadow: 0 2px 5px 0 var(--content-overlay);
+}
+
+.nav-logo {
+  position: relative;
+  top: 10px;
+}
+
+.nav-logo img {
+  width: 50px;
+}
+
+.nav-links a {
+  position: relative;
+  bottom: 25px;
+  color: var(--primary-color);
+  margin-left: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links .nav {
+  margin: 0 auto;
+}
+
+/* Join Page */
+
+.join-header {
+  position: relative;
+  left: 5px;
+}
+
+.form-section .form-group {
+  padding: 7px 10px;
+}
+
+.form-section .form-group .form-input {
+  height: 30px;
+  margin-top: 5px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-section .signup-agreement-links {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.form-section .signup-agreement-links:hover {
+  color: var(--primary-color-hover);
+}
+
+.form-section .form-group p {
+  font-size: 13px;
+  position: relative;
+  left: 2px;
+}
+
+.form-section .btn-primary {
+  outline: none;
+  height: 30px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white-color);
+  border-radius: var(--border-radius);
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.form-section .btn-primary:hover {
+  background-color: var(--primary-color-hover);
+}
+/* Footer */
+
+.footer {
+  height: 80px;
+}
+
+.footer-header {
+  position: relative;
+  top: 30px;
+}
