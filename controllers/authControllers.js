@@ -7,9 +7,7 @@ exports.register = CatchAsync(async (req, res, next) => {
   // validations
   let user = await User.findOne({ email }).exec();
   if (user) {
-    return next(
-      new AppError(`${email} is already registered. Please login`, 401)
-    );
+    return next(new AppError(`${email} is already registered.`, 401));
   }
   // register user
   const newUser = new User(req.body);
