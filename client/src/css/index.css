@@ -149,7 +149,9 @@
 /* join terms/privacy */
 
 .form-section .signup-agreement {
-  margin: 20px 9px;
+  margin: 15px 9px;
+  position: relative;
+  top: 15px;
 }
 
 .form-section .signup-agreement-links {
