@@ -7,20 +7,25 @@ function Join({ history }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // const [error, setError] = useState(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const url = `/api/v1/register`;
     const data = {
       name,
       email,
       password,
     };
+
     try {
       const res = await axios.post(url, data);
       console.log("REGISTER USER:", res);
       history.push("/login");
     } catch (err) {
       console.log(err);
+      // setError(err.response.data);
     }
   };
 
@@ -42,6 +47,7 @@ function Join({ history }) {
           password={password}
           setPassword={setPassword}
         />
+        {/* <div>{error && error.message}</div> */}
       </div>
     </div>
   );
