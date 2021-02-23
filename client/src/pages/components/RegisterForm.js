@@ -7,9 +7,11 @@ const RegisterForm = ({
   setEmail,
   password,
   setPassword,
+  error,
 }) => (
   <div className='form-section flex-center margin-center'>
-    <form className='card card-join-height ' onSubmit={handleSubmit}>
+    <form id='form' className='card card-join-height ' onSubmit={handleSubmit}>
+      <div className='form-group'>{error && error.message}</div>
       <div className='form-group flex-direction-column'>
         <input
           id='name'
