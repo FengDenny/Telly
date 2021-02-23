@@ -7,11 +7,14 @@
   --primary-color: #007ffc;
   --primary-color-hover: #075eb6;
   --secondary-color: #5d5d61;
+  --consent-btn-color: #4caf50;
+  --success: #20bf6b;
   --white-color: #fff;
   --space: 1.5em 0;
   --space: 2em 0;
   --content-overlay: rgba(0, 0, 0, 0.5);
   --border-radius: 5px;
+  --box-shadow-alert: 0 2rem 4rem rgba(0, 0, 0, 0.25);
 }
 
 /* CSS reset */
@@ -156,7 +159,7 @@ li {
 }
 
 .margin-center {
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 
 /* Grid */
@@ -169,12 +172,59 @@ li {
 }
 
 /* Card  */
+.card-join-height {
+  height: 350px !important;
+}
+
 .card {
   border: 2px solid var(--white-color);
   background-color: var(--white-color);
   border-radius: var(--border-radius);
   width: 450px;
-  height: auto;
+  height: 323px;
   position: relative;
   box-shadow: 0 8px 16px 0 var(--content-overlay);
+}
+
+/* Cookie Consent */
+#consent-popup {
+  position: fixed;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  padding: 2rem 8rem;
+  background-color: var(--primary-color);
+  transition: opacity 1s ease;
+  font-size: 18px;
+  z-index: 100;
+}
+.hidden {
+  opacity: 0 !important;
+}
+
+.consent-p {
+  position: relative;
+  bottom: 1px;
+  display: flex;
+  justify-content: center;
+  color: var(--white-color);
+}
+
+.consent-btn {
+  position: relative;
+  bottom: 10px;
+  left: 18px;
+  border: 1px solid var(--consent-btn-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-alert);
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  background-color: var(--consent-btn-color);
+  color: var(--white-color);
+  outline: none;
+  font-size: 17px;
+}
+.consent-btn:hover {
+  background-color: var(--success);
 }
