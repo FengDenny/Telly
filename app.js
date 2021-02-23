@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const GlobalErrorHandler = require("./controllers/errorController");
 const app = express();
 const { readdirSync } = require("fs");
 dotenv.config({ pathL: "./config/config.env" });
@@ -23,5 +24,13 @@ if (process.env.NODE_ENV === "development") {
 readdirSync("./routes").map((route) =>
   app.use("/api/v1", require(`./routes/${route}`))
 );
+
+// route middleware
+app.all("*", (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server`, 401));
+});
+
+// Global Error Handler for DB
+app.use(GlobalErrorHandler);
 
 module.exports = app;
