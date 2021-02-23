@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import RegisterForm from "./../components/RegisterForm";
-import axios from "axios";
+import { register } from "../../actions/authAction";
+import { showAlert } from "../../js/alerts";
 
 function Join({ history }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  // const [error, setError] = useState(null);
+  const [name, setName] = useState("dfeng");
+  const [email, setEmail] = useState("dfeezy4150@gmail.com");
+  const [password, setPassword] = useState("415aAa");
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = `/api/v1/register`;
     const data = {
       name,
       email,
@@ -19,12 +18,12 @@ function Join({ history }) {
     };
 
     try {
-      const res = await axios.post(url, data);
+      const res = await register(data);
       console.log("REGISTER USER:", res);
       history.push("/login");
     } catch (err) {
       console.log(err);
-      // setError(err.response.data);
+      setError(showAlert("error", err.response.data.message));
     }
   };
 
@@ -45,6 +44,8 @@ function Join({ history }) {
           setEmail={setEmail}
           password={password}
           setPassword={setPassword}
+          error={error}
+          setError={setError}
         />
       </div>
     </div>
