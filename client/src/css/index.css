@@ -1,5 +1,4 @@
 /* navbar */
-
 .navbar {
   box-shadow: 0 2px 5px 0 var(--content-overlay);
 }
@@ -26,6 +25,99 @@
   margin: 0 auto;
 }
 
+/* Home page */
+
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-container:after {
+  content: "";
+  /*  absolute position from parent of .hero because of its position relative */
+  position: absolute;
+  /* put the overlay in the corner position and spread across the video */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.video-section {
+  color: var(--white-color);
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+.video-section h5 {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 0 0 0;
+}
+
+.join-btn,
+.login-btn {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  width: 170px;
+  height: 30px;
+  outline: none;
+  box-shadow: 0 24px 21px 0 var(--content-overlay);
+  margin-top: 20px;
+}
+.login-btn {
+  border: 3px solid var(--primary-color);
+  background-color: transparent !important;
+}
+
+.join-btn {
+  margin-left: 60px;
+}
+
+.join-btn a,
+.login-btn a {
+  color: var(--white-color);
+  position: relative;
+  top: 7px;
+  text-transform: uppercase;
+}
+
+.login-btn a {
+  top: 4px;
+}
+
+.join-btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
 /* Join Page */
 
 .join-header {
@@ -47,16 +139,17 @@
   font-weight: bold;
   position: absolute;
   top: 22px;
-  left: 20px;
+  left: 14px;
   transition: all 0.1s ease-in-out;
 }
 .form-section > form > .form-group > input[type="text"],
 .form-section > form > .form-group > input[type="email"],
 .form-section > form > .form-group > input[type="password"] {
-  width: 100%;
+  width: 95%;
   border: 0;
-  padding: 25px 20px 20px 9px;
+  padding: 23px 39px 20px 9px;
   outline: none;
+  margin: 0 auto;
 }
 
 .form-section > form > .form-group > input[type="text"]:focus + label,
@@ -65,7 +158,7 @@
   opacity: 0.5;
   font-size: 12px;
   top: 4px;
-  left: 5px;
+  left: 15px;
 }
 .form-section > form > .form-group > input[type="text"]:valid + label,
 .form-section > form > .form-group > input[type="email"]:valid + label,
@@ -73,7 +166,7 @@
   opacity: 0.5;
   font-size: 12px;
   top: 4px;
-  left: 5px;
+  left: 15px;
 }
 
 .form-section
@@ -181,13 +274,52 @@
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 7px;
+  margin: 12px;
   margin-top: 25px;
   margin-bottom: 25px;
 }
 .form-section .btn-primary:hover {
   background-color: var(--primary-color-hover);
 }
+
+.to-login {
+  text-decoration: underline;
+  padding: 0 0 0 5px;
+}
+
+/* Login */
+.login h1 {
+  margin: 0 auto;
+}
+
+.login-form {
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.login-reset {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.login-form .to-join {
+  text-decoration: underline;
+  padding: 0 0 0 5px;
+}
+
+.login-form
+  .form-section
+  > form
+  > .form-group
+  > input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+.login-form
+  .form-section
+  > form
+  > .form-group
+  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  border-bottom: 2px solid var(--secondary-color) !important;
+}
+
 /* Footer */
 
 .footer {
