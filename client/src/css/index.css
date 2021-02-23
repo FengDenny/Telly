@@ -33,16 +33,123 @@
   left: 5px;
 }
 
-.form-section .form-group {
-  padding: 7px 10px;
+/* join-card */
+.form-section > form > .form-group {
+  position: relative;
 }
 
-.form-section .form-group .form-input {
-  height: 30px;
-  margin-top: 5px;
-  border: 2px solid var(--secondary-color);
-  border-radius: 5px;
+.form-section .form-input {
+  border-bottom: 1px solid var(--secondary-color) !important;
+}
+
+.form-section > form > .form-group > label {
+  opacity: 0.3;
+  font-weight: bold;
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  transition: all 0.1s ease-in-out;
+}
+.form-section > form > .form-group > input[type="text"],
+.form-section > form > .form-group > input[type="email"],
+.form-section > form > .form-group > input[type="password"] {
+  width: 100%;
+  border: 0;
+  padding: 25px 20px 20px 9px;
   outline: none;
+}
+
+.form-section > form > .form-group > input[type="text"]:focus + label,
+.form-section > form > .form-group > input[type="email"]:focus + label,
+.form-section > form > .form-group > input[type="password"]:focus + label {
+  opacity: 0.5;
+  font-size: 12px;
+  top: 4px;
+  left: 5px;
+}
+.form-section > form > .form-group > input[type="text"]:valid + label,
+.form-section > form > .form-group > input[type="email"]:valid + label,
+.form-section > form > .form-group > input[type="password"]:valid + label {
+  opacity: 0.5;
+  font-size: 12px;
+  top: 4px;
+  left: 5px;
+}
+
+.form-section
+  > form
+  > .form-group
+  > input[type="text"]:invalid:not(:focus):not(:placeholder-shown)
+  + label,
+.form-section
+  > form
+  > .form-group
+  > input[type="email"]:invalid:not(:focus):not(:placeholder-shown)
+  + label,
+.form-section
+  > form
+  > .form-group
+  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown)
+  + label {
+  opacity: 0;
+}
+
+.form-section > form > .form-group > input::placeholder {
+  opacity: 0;
+}
+
+.form-section
+  > form
+  > .form-group
+  > input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+.form-section
+  > form
+  > .form-group
+  > input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+.form-section
+  > form
+  > .form-group
+  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  border-bottom: 2px solid red !important;
+}
+
+.form-section
+  > form
+  > .form-group
+  > input[type="text"]:invalid:focus:not(:placeholder-shown)
+  ~ .validation,
+.form-section
+  > form
+  > .form-group
+  > input[type="email"]:invalid:focus:not(:placeholder-shown)
+  ~ .validation,
+.form-section
+  > form
+  > .form-group
+  > input[type="password"]:invalid:focus:not(:placeholder-shown)
+  ~ .validation {
+  max-height: 200px;
+  padding: 0px 30px 8px 10px;
+  transition-delay: 1s;
+}
+.form-section > form > .form-group .validation {
+  padding: 0 10px 0 50px;
+  color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+
+  font-size: 14px;
+  position: relative;
+  top: 10px;
+  line-height: 20px;
+}
+
+/* join terms/privacy */
+
+.form-section .signup-agreement {
+  margin: 20px 9px;
 }
 
 .form-section .signup-agreement-links {
@@ -61,6 +168,7 @@
   left: 2px;
 }
 
+/* join btn */
 .form-section .btn-primary {
   outline: none;
   height: 30px;
@@ -71,6 +179,9 @@
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
+  margin: 7px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .form-section .btn-primary:hover {
   background-color: var(--primary-color-hover);
