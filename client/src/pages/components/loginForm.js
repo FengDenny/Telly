@@ -5,10 +5,12 @@ const LoginForm = ({
   setEmail,
   password,
   setPassword,
+  error,
 }) => (
   <div className='login-form'>
     <div className='form-section  '>
-      <form className='card ' onSubmit={handleSubmit}>
+      <form id='form' className='card ' onSubmit={handleSubmit}>
+        <div className='form-group'>{error && error.message}</div>
         <div className='form-group flex-direction-column'>
           <input
             id='email'
@@ -16,8 +18,8 @@ const LoginForm = ({
             className='form-input'
             name='email'
             placeholder='email'
-            // onChange={(e) => setEmail(e.target.value)}
-            // value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
             required
           />
 
@@ -37,8 +39,8 @@ const LoginForm = ({
             name='password'
             placeholder='password'
             pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}'
-            // onChange={(e) => setPassword(e.target.value)}
-            // value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
             required
           />
           <label
@@ -49,7 +51,9 @@ const LoginForm = ({
           </label>
         </div>
         <div className='form-group flex-direction-column'>
-          <button className='btn btn-primary '>Login</button>
+          <button disabled={!email || !password} className='btn btn-primary '>
+            Login
+          </button>
         </div>
         <div className='form-group flex-direction-column'>
           <Link className='login-reset margin-center' to='/login'>
