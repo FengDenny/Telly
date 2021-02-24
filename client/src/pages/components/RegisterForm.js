@@ -89,7 +89,12 @@ const RegisterForm = ({
         </p>
       </div>
       <div className='form-group flex-direction-column'>
-        <button className='btn btn-primary '>Join</button>
+        <button
+          disabled={!name || !email || !password}
+          className='btn btn-primary '
+        >
+          Join
+        </button>
       </div>
       <div className='form-group flex-direction-column'>
         <p className='secondary-heading secondary-color margin-center'>
