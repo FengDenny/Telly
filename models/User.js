@@ -13,6 +13,7 @@ const UserSchema = new mongoose.Schema(
       trim: true,
       required: "Email is required",
       unique: true,
+      lowercase: true,
     },
     password: {
       type: String,
@@ -44,6 +45,19 @@ UserSchema.pre("save", function (next) {
     return next();
   }
 });
+
+UserSchema.methods.comparePassword = function (password, next) {
+  bcrypt.compare(password, this.password, function (err, match) {
+    if (err) {
+      console.log("COMPARE PASSWORD ERROR", err);
+      return next(err, false);
+    }
+    // no err, get null
+    console.log("MATCH PASSWORD", match);
+    //true
+    return next(null, match);
+  });
+};
 
 const User = mongoose.model("User", UserSchema);
 module.exports = User;
