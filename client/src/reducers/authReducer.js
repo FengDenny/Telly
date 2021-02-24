@@ -1,7 +1,14 @@
-// 2. create user reducers function
+let userState;
 
+if (window.localStorage.getItem("auth")) {
+  userState = JSON.parse(window.localStorage.getItem("auth"));
+} else {
+  userState = null; //{}
+}
+
+// 2. create user reducers function
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (state = {}, action) => {
+export default (state = userState, action) => {
   // {type:' '. payload:''}
   switch (action.type) {
     case "LOGGED_IN_USER":
