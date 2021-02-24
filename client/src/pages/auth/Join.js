@@ -45,7 +45,6 @@ function Join({ history }) {
           password={password}
           setPassword={setPassword}
           error={error}
-          setError={setError}
         />
       </div>
     </div>
