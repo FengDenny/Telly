@@ -10,6 +10,7 @@
   --consent-btn-color: #4caf50;
   --success: #20bf6b;
   --white-color: #fff;
+  --white-rgba-color: rgba(247, 247, 247, 0.9);
   --error: red;
   --space: 1.5em 0;
   --space: 2em 0;
@@ -128,6 +129,10 @@ li {
   justify-content: flex-end;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .justify-evenly {
   justify-content: space-evenly;
 }
@@ -185,6 +190,16 @@ li {
   border-radius: var(--border-radius);
   width: 450px;
   height: 323px;
+  position: relative;
+  box-shadow: 0 8px 16px 0 var(--content-overlay);
+}
+
+.dashboard-card {
+  border: 2px solid var(--white-color);
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  width: 350px;
+  height: 150px;
   position: relative;
   box-shadow: 0 8px 16px 0 var(--content-overlay);
 }
