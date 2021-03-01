@@ -338,6 +338,130 @@
   border-bottom: 2px solid var(--secondary-color) !important;
 }
 
+/* Dashboard */
+.user-dashboard-hero {
+  background-color: var(--white-rgba-color);
+  height: 50vh;
+}
+
+.user-dashboard-section {
+  margin-top: 20px;
+}
+
+.dashboard {
+  position: relative;
+  top: 13vh;
+}
+
+.dashboard-info {
+  position: absolute;
+  top: 58px;
+  left: 21px;
+}
+.dashboard-payout {
+  padding: 0 10px;
+}
+
+.dashboard-card .dasboard-user-info {
+  position: absolute;
+  left: 57px;
+  top: 5px;
+}
+
+.dashboard-card .avatar {
+  border: 1px solid var(--primary-color);
+  background-color: var(--white-rgba-color);
+  border-radius: 80px;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  position: absolute;
+  left: 20px;
+  top: 5px;
+}
+
+.dashboard-card .title {
+  margin-top: 10px;
+}
+.dashboard-card .description {
+  color: var(--secondary-color);
+  padding: 2px 0;
+  font-size: 13px;
+  position: relative;
+}
+
+.dashboard-card .avatar h2 {
+  position: relative;
+  left: 5px;
+  top: 2px;
+}
+
+.user-dashbord-browse {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-sm);
+  background-color: var(--primary-color);
+  height: 30px;
+  width: 150px;
+  position: absolute;
+  right: 270px;
+}
+
+.user-booking {
+  text-align: center;
+}
+
+.user-booking h2 {
+  position: relative;
+  left: 10px;
+  padding: 10px 0;
+}
+
+.user-dashbord-browse a {
+  color: var(--white-color);
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.user-dashboard-section p {
+  margin-top: 15px;
+}
+
+.user-dashboard-section .btn-primary {
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 134px;
+  height: 32px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-sm);
+  cursor: pointer;
+  margin-top: 15px;
+  outline: none;
+}
+
+/* dashboard tab */
+
+.tabs-titles {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.tab-title {
+  background-color: #fff;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+.tab-title a {
+  color: var(--primary-color);
+}
+
 /* Footer */
 
 .footer {
