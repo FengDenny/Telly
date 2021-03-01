@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import Telly_logo from "../../images/Telly_logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import Telly_logo from "../../images/Telly_logo.svg";
+import DashboardNav from "./DashboardNav";
 function Navbar() {
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => ({ ...state }));
@@ -12,7 +12,7 @@ function Navbar() {
   const logout = () => {
     dispatch({ type: "LOGOUT", payload: null });
     window.localStorage.removeItem("auth");
-    history.push("/login");
+    history.push("/");
   };
   return (
     <nav className='navbar primary-color'>
@@ -21,25 +21,38 @@ function Navbar() {
           <img src={Telly_logo} alt='logo' />
         </header>
         <div className='nav-links  font-md secondary-heading flex-direction-row  justify-end'>
-          <ul className='nav flex-direction-row'>
-            <li>
-              <NavLink
-                activeStyle={{
-                  borderBottom: "1px solid #414f63 ",
-                }}
-                exact
-                to='/'
-              >
-                Home
-              </NavLink>
-            </li>
-          </ul>{" "}
           {auth !== null && (
-            <ul className='nav-logout '>
-              <li className='nav-logout-btn'>
-                <button onClick={logout}>Logout</button>
-              </li>
-            </ul>
+            <Fragment>
+              <ul className='nav flex-direction-row'>
+                <li>
+                  <NavLink
+                    activeStyle={{
+                      borderBottom: "1px solid #414f63 ",
+                    }}
+                    exact
+                    to='/hotel_booking'
+                  >
+                    Hotels
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    activeStyle={{
+                      borderBottom: "1px solid #414f63 ",
+                    }}
+                    exact
+                    to='/user_dashboard'
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
+              </ul>
+              <ul className='nav-logout '>
+                <li className='nav-logout-btn'>
+                  <button onClick={logout}>Logout</button>
+                </li>
+              </ul>
+            </Fragment>
           )}
           {auth === null && (
             <>
