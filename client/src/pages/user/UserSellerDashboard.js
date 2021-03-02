@@ -17,6 +17,7 @@ const UserSellerDashboard = () => {
     try {
       let res = await createConnectAccount(auth.token);
       console.log(res); // get login link
+      window.location.href = res.data;
     } catch (err) {
       console.log(err);
       setLoading(false);
@@ -78,11 +79,10 @@ const UserSellerDashboard = () => {
       <div className='container'>
         <DashboardNav />
       </div>
-      {auth &&
-      auth.user &&
-      auth.user.stripe_seller &&
-      auth.user.stripe_seller.charges_enabled
-        ? connected()
+      {auth && auth.user && auth.user.stripe_seller
+        ? // &&
+          // auth.user.stripe_seller.charges_enabled
+          connected()
         : notConnected()}
       {/* <pre>{JSON.stringify(auth, null, 4)}</pre> */}
     </>
