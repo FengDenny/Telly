@@ -160,6 +160,11 @@ li {
   padding: 0 10px;
 }
 
+/* height */
+.height-center {
+  height: 50vh;
+}
+
 /* Margin */
 
 .margin-top-20 {
@@ -222,11 +227,8 @@ li {
   box-shadow: var(--box-shadow-alert);
 }
 
-.alert-login {
-  top: 148px;
-  left: 50% !important;
-  width: 500px;
-  font-size: 1.2rem;
+.alert-payment {
+  width: 350px !important;
 }
 
 .alert--success {
