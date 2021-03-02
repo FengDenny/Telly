@@ -13,3 +13,13 @@ export const showAlert = (type, message) => {
   //   hide the alert after 5sec
   window.setTimeout(hideAlert, 5000);
 };
+
+export const showPaymentAlert = (type, message) => {
+  hideAlert();
+  const markup = `<div class=" alert alert-payment alert--${type}">${message}</div>`;
+
+  document.getElementById("payment").insertAdjacentHTML("afterbegin", markup);
+
+  //   hide the alert after 5sec
+  window.setTimeout(hideAlert, 5000);
+};
