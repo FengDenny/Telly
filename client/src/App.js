@@ -15,6 +15,7 @@ import UserDashboard from "./pages/user/UserDashboard";
 import UserSellerDashboard from "./pages/user/UserSellerDashboard";
 import HotelBooking from "./pages/booking/HotelBooking";
 import AddHotel from "./pages/hotel/NewHotels";
+import StripeCallback from "./pages/stripe/StripeCallback";
 
 function App() {
   return (
@@ -66,6 +67,15 @@ function App() {
                 render={(props) => (
                   <Page title='Telly | Add new hotel'>
                     <AddHotel {...props} />
+                  </Page>
+                )}
+              />
+              <Route
+                exact
+                path='/stripe/callback'
+                render={(props) => (
+                  <Page title='Telly | Stripe Callback'>
+                    <StripeCallback {...props} />
                   </Page>
                 )}
               />
