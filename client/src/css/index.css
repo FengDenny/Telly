@@ -346,6 +346,7 @@
 
 .user-dashboard-section {
   margin-top: 20px;
+  height: auto;
 }
 
 .dashboard {
@@ -358,8 +359,21 @@
   top: 58px;
   left: 21px;
 }
+
+.dashboard-balance span {
+  position: relative;
+  top: 2px;
+}
+
 .dashboard-payout {
   padding: 0 10px;
+  cursor: pointer;
+  position: relative;
+  bottom: 4px;
+}
+.dashboard-payout span {
+  position: relative;
+  bottom: 7px;
 }
 
 .dashboard-card .dasboard-user-info {
@@ -465,10 +479,10 @@
 /* Footer */
 
 .footer {
-  height: 80px;
+  height: 55px;
 }
 
 .footer-header {
   position: relative;
-  top: 30px;
+  top: 25px;
 }
