@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const GlobalErrorHandler = require("./controllers/errorController");
+const AppError = require("./utility/AppError");
 const app = express();
 const { readdirSync } = require("fs");
 dotenv.config({ pathL: "./config/config.env" });
