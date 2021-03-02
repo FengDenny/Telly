@@ -46,7 +46,16 @@ exports.login = CatchAsync(async (req, res, next) => {
         expiresIn: "7d",
       });
 
-      const { _id, name, email, createdAt, updatedAt } = user;
+      const {
+        _id,
+        name,
+        email,
+        createdAt,
+        updatedAt,
+        stripe_account_id,
+        stripe_seller,
+        stripeSession,
+      } = user;
       return res.json({
         status: "success",
         message: `Welcome back, ${name}`,
@@ -57,6 +66,9 @@ exports.login = CatchAsync(async (req, res, next) => {
           email,
           createdAt,
           updatedAt,
+          stripe_account_id,
+          stripe_seller,
+          stripeSession,
         },
       });
     });
