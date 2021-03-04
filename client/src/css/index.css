@@ -162,7 +162,8 @@
 }
 .form-section > form > .form-group > input[type="text"],
 .form-section > form > .form-group > input[type="email"],
-.form-section > form > .form-group > input[type="password"] {
+.form-section > form > .form-group > input[type="password"],
+.form-section > form > .form-group > input[type="number"] {
   width: 95%;
   border: 0;
   padding: 23px 39px 20px 9px;
@@ -172,7 +173,8 @@
 
 .form-section > form > .form-group > input[type="text"]:focus + label,
 .form-section > form > .form-group > input[type="email"]:focus + label,
-.form-section > form > .form-group > input[type="password"]:focus + label {
+.form-section > form > .form-group > input[type="password"]:focus + label,
+.form-section > form > .form-group > input[type="number"]:focus + label {
   opacity: 0.5;
   font-size: 12px;
   top: 4px;
@@ -180,7 +182,8 @@
 }
 .form-section > form > .form-group > input[type="text"]:valid + label,
 .form-section > form > .form-group > input[type="email"]:valid + label,
-.form-section > form > .form-group > input[type="password"]:valid + label {
+.form-section > form > .form-group > input[type="password"]:valid + label,
+.form-section > form > .form-group > input[type="number"]:valid + label {
   opacity: 0.5;
   font-size: 12px;
   top: 4px;
@@ -201,6 +204,11 @@
   > form
   > .form-group
   > input[type="password"]:invalid:not(:focus):not(:placeholder-shown)
+  + label,
+.form-section
+  > form
+  > .form-group
+  > input[type="number"]:invalid:not(:focus):not(:placeholder-shown)
   + label {
   opacity: 0;
 }
@@ -220,7 +228,11 @@
 .form-section
   > form
   > .form-group
-  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  > input[type="password"]:invalid:not(:focus):not(:placeholder-shown),
+.form-section
+  > form
+  > .form-group
+  > input[type="number"]:invalid:not(:focus):not(:placeholder-shown) {
   border-bottom: 2px solid red !important;
 }
 
@@ -238,6 +250,11 @@
   > form
   > .form-group
   > input[type="password"]:invalid:focus:not(:placeholder-shown)
+  ~ .validation,
+.form-section
+  > form
+  > .form-group
+  > input[type="number"]:invalid:focus:not(:placeholder-shown)
   ~ .validation {
   max-height: 200px;
   padding: 0px 30px 8px 10px;
@@ -474,6 +491,61 @@
 
 .tab-title a {
   color: var(--primary-color);
+}
+
+/* NewHotels */
+
+.jumbotron {
+  background-color: var(--white-rgba-color);
+  height: 30vh;
+}
+
+.jumbotron-top {
+  position: relative;
+  top: 95px;
+}
+
+.form-image-title {
+  position: relative;
+  top: 80px;
+}
+
+.form-image-price {
+  top: 90px;
+}
+
+.form-image-bed {
+  top: 100px;
+}
+
+.form-image-content {
+  top: 110px;
+  width: 421px;
+  left: 11px;
+}
+
+.form-image-btn {
+  margin-top: 92px !important;
+}
+
+.form-image-content textarea::placeholder {
+  padding: 5px 5px;
+  font-size: 18px;
+  opacity: 0.3;
+  font-weight: bold;
+}
+
+.image-label-btn {
+  background-color: var(--primary-color);
+  color: var(--white-color) !important;
+  opacity: 1 !important;
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-sm);
+  width: 180px;
+  text-align: center;
+  height: 40px;
 }
 
 /* Footer */
