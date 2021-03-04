@@ -154,10 +154,21 @@ li {
   font-size: 50px;
 }
 
+/* text align */
+.text-align-center {
+  text-align: center;
+}
+
 /* padding */
 
 .padding {
   padding: 0 10px;
+}
+
+/* positioning */
+.top-position {
+  position: relative;
+  top: 20px;
 }
 
 /* height */
@@ -207,6 +218,10 @@ li {
   height: 150px;
   position: relative;
   box-shadow: 0 8px 16px 0 var(--content-overlay);
+}
+
+.image-upload-card {
+  height: 380px !important;
 }
 
 /* Alert */
